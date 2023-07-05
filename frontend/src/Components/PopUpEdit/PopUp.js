@@ -8,12 +8,13 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 export default function PopUp() {
     const location = useLocation()
+
+    //states
     const [name, setName] = useState(location.state.currcoupondata.name)
     const [type, setType] = useState(location.state.currcoupondata.type)
     const [value, setValue] = useState(location.state.currcoupondata.value)
     const [expiration, setExp] = useState(location.state.currcoupondata.expiration)
     const [_id, setid] = useState(location.state.currcoupondata._id)
-
 
     const navigate = useNavigate()
 
@@ -30,17 +31,15 @@ export default function PopUp() {
                 }
             }
 
-            const { data } = await axios.put('http://localhost:5000/api/coupons/edit', {
+            const { data } = await axios.put('https://couponbackend.onrender.com/api/coupons/edit', {
                 name, type, value, expiration, _id
             }, config)
-            console.log('data edited succesfully ' + data)
-
+            
             navigate('/adminhome')
 
         }
         catch (error) {
-            // setMessages(error.response.data)
-            console.log(error.response.data)
+            
         }
     }
 
@@ -76,7 +75,5 @@ export default function PopUp() {
             </Container>
 
         </>
-
-
     )
 }

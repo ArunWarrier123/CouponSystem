@@ -2,7 +2,7 @@ import React from 'react'
 import { Form, Button, Row, Col, Container } from 'react-bootstrap'
 import { useState } from 'react'
 import ErrorMessage from '../../Components/ErrorMessage'
-import { Link , useNavigate} from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 import './LoginScreen.css'
@@ -13,41 +13,39 @@ function LoginScreen() {
     const [password, setPassword] = useState("")
     const [messages, setMessages] = useState("")
 
-    //   const isLoggedin = localStorage.getItem('name')
 
-      const navigate = useNavigate()
+    const navigate = useNavigate()
 
 
     const loginHandler = async (e) => {
         e.preventDefault()
 
-          try {
-              const config = {
-                  headers: {
-                      'Content-type': 'application/json'
-                  }
-              }
+        try {
+            const config = {
+                headers: {
+                    'Content-type': 'application/json'
+                }
+            }
 
-              const { data } = await axios.post('http://localhost:5000/api/users/login', {
-                  email, password
-              }, config)
-            console.log('aess token got with loginapi ' + data)
-              //verify role and then navigate accordingly
-              const authheader = {
+            const { data } = await axios.post('https://couponbackend.onrender.com/api/users/login', {
+                email, password
+            }, config)
+            //verify role and then navigate accordingly
+            const authheader = {
                 headers: {
                     authorization: `Bearer ${data}`
                 }
-              }
-              const  role  = await axios.get('http://localhost:5000/api/users/verifyrole', authheader)
-            if(role.data.role == "Admin"){
+            }
+            const role = await axios.get('https://couponbackend.onrender.com/api/users/verifyrole', authheader)
+            if (role.data.role === "Admin") {
                 navigate('/adminhome')
-            }  
-            else  navigate('/userhome')
+            }
+            else navigate('/userhome')
 
-          }
-          catch (error) {
-              setMessages(error.response.data)
-          }
+        }
+        catch (error) {
+            setMessages(error.response.data)
+        }
 
     }
 

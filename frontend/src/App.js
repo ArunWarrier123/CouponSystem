@@ -2,7 +2,6 @@ import './App.css';
 import LoginScreen from './Screens/LoginScreen/LoginScreen';
 import { BrowserRouter as Router , Routes , Route } from 'react-router-dom'
 import Header from './Components/Header/Header';
-import Footer from './Components/Footer/Footer';
 import RegisterScreen from './Screens/RegisterScreen/RegisterScreen';
 import AdminHome from './Screens/AdminHomeScreen/AdminHome';
 import CustomerHome from './Screens/CustomerHomeScreen/CustomerHome';

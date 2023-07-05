@@ -12,14 +12,12 @@ export default function Header() {
     const navigate = useNavigate()
 
     const logoutHandler = async () => {
-        // localStorage.removeItem('name')
-        // localStorage.removeItem('isLoggedIn')
         const authheader = {
             headers: {
                 authorization: ""
             }
           }
-        await axios.get('http://localhost:5000/api/users/logout' , authheader)
+        await axios.get('https://couponbackend.onrender.com/api/users/logout' , authheader)
         navigate('/login')
     }
 
@@ -40,9 +38,6 @@ export default function Header() {
                                 Logout
                             </NavDropdown.Item>
                         </NavDropdown>
-                    
-                     
-                    
                 </Container>
             </Navbar>
         </>

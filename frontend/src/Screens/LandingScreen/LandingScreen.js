@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Container, Button, Row, Col } from 'react-bootstrap'
+import { Container, Button, Row } from 'react-bootstrap'
 import './LandingScreen.css'
 
 export default function LandingScreen() {

@@ -7,13 +7,11 @@ import { useNavigate } from 'react-router-dom'
 
 export default function CustomerHome() {
 
-  const productList = {}
   const [products, setProducts] = useState([])
   const navigate = useNavigate()
 
   const fetch = async () => {
-    const data = await axios.get('http://localhost:5000/api/products/read')
-    console.log(data)
+    const data = await axios.get('https://couponbackend.onrender.com/api/products/read')
     setProducts(data.data)
   }
 
@@ -25,8 +23,7 @@ export default function CustomerHome() {
 
   const purchaseProduct = async(e, curr_product) => {
     e.preventDefault()
-    const data = await axios.get(`http://localhost:5000/api/coupons/getcoupons/${curr_product.id}`)
-    console.log(data)
+    const data = await axios.get(`https://couponbackend.onrender.com/api/coupons/getcoupons/${curr_product.id}`)
     navigate('/purchase' , {
       state: {
         validcouponslist: data.data,
@@ -71,9 +68,6 @@ export default function CustomerHome() {
 
 
       </div>
-
-
-
     </>
 
   )

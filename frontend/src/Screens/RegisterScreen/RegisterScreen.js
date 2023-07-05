@@ -1,6 +1,6 @@
 import React from 'react'
 import { Row, Col, Form, Button, Container } from 'react-bootstrap'
-import { useState, useEffect } from 'react'
+import { useState} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import ErrorMessage from '../../Components/ErrorMessage'
@@ -20,41 +20,26 @@ export default function RegisterScreen() {
     const registerHandler = async (e) => {
         e.preventDefault()
         setMessages("")
-        console.log(role)
         try {
             const config = {
                 headers: {
                     'Content-type': 'application/json'
                 }
             }
-            // console.log('axios returned')
             //access token is stored in data const
-            const { data } = await axios.post('http://localhost:5000/api/users/register', {
-                name, email, password , role
+            const { data } = await axios.post('https://couponbackend.onrender.com/api/users/register', {
+                name, email, password, role
             }, config)
-            console.log(data)
-            if(role == "Admin"){
+            if (role === "Admin") {
                 navigate('/adminhome')
-            }  
-            else  navigate('/userhome')
-
-            // localStorage.setItem('name', name)
-            // localStorage.setItem('isLoggedIn', true)
-            // navigate('/home')
-            console.log(data)
+            }
+            else navigate('/userhome')
 
         }
         catch (error) {
             setMessages(error.response.data)
         }
     }
-
-
-
-    useEffect(() => {
-        if (localStorage.getItem('isLoggedIn')) navigate('/home')
-    }, [])
-
 
 
     return (
@@ -84,10 +69,10 @@ export default function RegisterScreen() {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="formUserType">
-                        <Form.Select aria-label="Default select example" onChange={ (e)=> setRole(e.target.value)}>
-                            <option value="Customer">Customer</option>
-                            <option value="Administrator">Administrator</option>
-                        </Form.Select>
+                            <Form.Select aria-label="Default select example" onChange={(e) => setRole(e.target.value)}>
+                                <option value="Customer">Customer</option>
+                                <option value="Admin">Admin</option>
+                            </Form.Select>
                         </Form.Group>
 
 
