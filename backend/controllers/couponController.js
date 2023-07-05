@@ -41,14 +41,15 @@ const editcoupon = async (req, res) => {
 
 
 const createcoupon = async (req, res) => {
-    const { name, type, value, expiration } = req.body
-
+    const { name, type, value, expiration , products} = req.body
+    console.log(products)
     try {
         const data = await couponModel.create({
             name,
             type,
             value,
-            expiration
+            expiration,
+            products
         })
         res.send(data)
 
@@ -58,11 +59,12 @@ const createcoupon = async (req, res) => {
 }
 
 
-const readonecoupon = async (req, res) => {
+const readvalidcoupons = async (req, res) => {
     const _id = req.params.id
-    console.log('inside one controller' + req.params.id)
+    const currdate = new Date()
+    console.log('inside one controller' + currdate)
     try {
-        const data = await couponModel.findOne({ _id })
+        const data = await couponModel.find({ products: parseInt(_id) , expiration: {$gt: currdate}})
         console.log(data)
         res.send(data)
 
@@ -71,4 +73,4 @@ const readonecoupon = async (req, res) => {
     }
 }
 
-module.exports = { readcoupons, deletecoupon, editcoupon, createcoupon, readonecoupon }
+module.exports = { readcoupons, deletecoupon, editcoupon, createcoupon, readvalidcoupons }

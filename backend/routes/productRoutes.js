@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 // const verifyRole = require('../middleware/verifyRole')
 // const verifyJWT = require('../middleware/verifyJWT')
-const { getproducts } = require('../controllers/productController')
+const { getproducts, getlength } = require('../controllers/productController')
 
 //after verify role one more function will be called always 
 //verify role is just middleware
@@ -13,7 +13,8 @@ const { getproducts } = require('../controllers/productController')
 
 // router.route('/delete/:id').delete( deletecoupon )
 
-router.route('/getcoupon/read').get( getproducts )
+router.route('/read').get( getproducts )
+router.route('/length').get(getlength)
 
 
 module.exports = router

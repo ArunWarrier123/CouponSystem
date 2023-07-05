@@ -17,6 +17,9 @@ const couponSchema = mongoose.Schema({
     expiration:{
         type: Date,
         required: true
+    },
+    products:{
+        type: Array
     }
 })
 

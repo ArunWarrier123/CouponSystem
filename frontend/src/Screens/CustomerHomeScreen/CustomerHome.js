@@ -23,11 +23,14 @@ export default function CustomerHome() {
   }, [])
 
 
-  const purchaseProduct = (e, curr_product) => {
+  const purchaseProduct = async(e, curr_product) => {
     e.preventDefault()
+    const data = await axios.get(`http://localhost:5000/api/coupons/getcoupons/${curr_product.id}`)
+    console.log(data)
     navigate('/purchase' , {
       state: {
-        currproductdata: curr_product
+        validcouponslist: data.data,
+        proddetails: curr_product
       }
     })
 
