@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const verifyRole = require('../middleware/verifyRole')
 const verifyJWT = require('../middleware/verifyJWT')
-const { readcoupons, deletecoupon , editcoupon , createcoupon} = require('../controllers/couponController')
+const { readcoupons, deletecoupon , editcoupon , createcoupon , readonecoupon} = require('../controllers/couponController')
 
 //after verify role one more function will be called always 
 //verify role is just middleware
@@ -14,6 +14,7 @@ router.route('/edit').put( editcoupon )
 router.route('/delete/:id').delete( deletecoupon )
 
 router.route('/read').get( readcoupons )
+router.route('/readone/:id').get( readonecoupon )
 
 
 module.exports = router

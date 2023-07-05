@@ -1,0 +1,31 @@
+ [
+    {
+        "id": 1,
+        "name":"Watch",
+        "price": "Rs. 3000",
+        "image":"https://m.media-amazon.com/images/I/61VVeNXaw4L.jpg",
+        "validcoupons": ["64a5395bbbb7ae0198180a47", "64a54a3d13f48c9975f0da70"]
+    },
+    {
+        "id": 2,
+        "name":"LapTop",
+        "price": "Rs. 30000",
+        "image":"https://i.pcmag.com/imagery/reviews/05WuMkCw3ufRhE5brVrTwhZ-1.fit_lim.size_840x473.v1669141791.jpg",
+        "validcoupons": ["64a5395bbbb7ae0198180a44", "64a5395bbbb7ae0198180a49"]
+    },
+    {
+        "id": 1,
+        "name":"TeleVision",
+        "price": "Rs. 60000",
+        "image":"https://johnlewis.scene7.com/is/image/JohnLewis/tv-carousel1-160922",
+        "validcoupons": ["64a5395bbbb7ae0198180a48", "64a54a3d13f48c9975f0da70"]
+    },
+    {
+        "id": 1,
+        "name":"SideMen Hoodie",
+        "price": "Rs. 2500",
+        "image":"https://media.karousell.com/media/photos/products/2023/2/23/sidemen_hoodie_1677120254_d9bffe8e.jpg",
+        "validcoupons": ["64a5462b13f48c9975f0da69", "64a5395bbbb7ae0198180a4a"]
+    }
+
+]

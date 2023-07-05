@@ -40,11 +40,11 @@ const editcoupon = async (req, res) => {
 }
 
 
-const createcoupon = async( req ,res )=>{
+const createcoupon = async (req, res) => {
     const { name, type, value, expiration } = req.body
 
     try {
-        const data = await couponModel.create( {
+        const data = await couponModel.create({
             name,
             type,
             value,
@@ -57,4 +57,18 @@ const createcoupon = async( req ,res )=>{
     }
 }
 
-module.exports = { readcoupons, deletecoupon, editcoupon , createcoupon}
+
+const readonecoupon = async (req, res) => {
+    const _id = req.params.id
+    console.log('inside one controller' + req.params.id)
+    try {
+        const data = await couponModel.findOne({ _id })
+        console.log(data)
+        res.send(data)
+
+    } catch (error) {
+        res.sendStatus(409)
+    }
+}
+
+module.exports = { readcoupons, deletecoupon, editcoupon, createcoupon, readonecoupon }

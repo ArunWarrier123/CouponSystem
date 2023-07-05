@@ -8,7 +8,7 @@ import AdminHome from './Screens/AdminHomeScreen/AdminHome';
 import CustomerHome from './Screens/CustomerHomeScreen/CustomerHome';
 import PopUp from './Components/PopUpEdit/PopUp';
 import CreateCoupon from './Screens/CreateCoupon/createCoupon';
-
+import ProductScreen from './Screens/ProductScreen/ProductScreen';
 
 function App() {
   return (
@@ -23,6 +23,7 @@ function App() {
         <Route path='/userhome' element={ <CustomerHome/>}/>
         <Route path='/popup' element={ <PopUp/>}/>
         <Route path='/popupcreate' element={ <CreateCoupon/>}/>
+        <Route path='/purchase' element={ <ProductScreen/>}/>
 
       </Routes>
       </main>

@@ -44,6 +44,7 @@ app.get('/', (req , res) =>{
 app.use('/api/users' , require('./routes/userRoutes'))
 // app.use('/api/test' , require('./routes/userRoutes'))
 app.use('/api/coupons' , require('./routes//couponSystemRoutes'))
+app.use('/api/products' , require('./routes/productRoutes'))
 
 app.listen(process.env.PORT , () => {
     console.log('Server is running on Port ' + process.env.PORT)

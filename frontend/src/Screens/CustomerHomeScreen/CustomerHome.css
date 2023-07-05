@@ -1,0 +1,50 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* padding: 20px; */
+}
+/* 
+.onecard{
+    margin: auto;
+    justify-content: space-between;
+} */
+/* .forflex{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+} */
+
+.purchasebtn{
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: auto;
+}
+
+
+.addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aqua;
+    /* height: 1000px; */
+}
+
+.icon{
+    height: 200px;
+}
+
+
+.prodimage{
+    height:auto;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+}
