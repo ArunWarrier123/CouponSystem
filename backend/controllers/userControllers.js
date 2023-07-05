@@ -24,7 +24,6 @@ const loginController = async (req, res) => {
                 process.env.ACCESS_TOKEN_SECRET,
                 { expiresIn: '5m' }
             )
-                console.log("printing role from db" + userExists.role)
             const refreshToken = jwt.sign(
                 { "name": userExists.name },
                 process.env.REFRESH_TOKEN_SECRET,
@@ -47,14 +46,12 @@ const logoutController = (req, res) => {
 
 }
 const registerController = async (req, res, next) => {
-    // res.send('Register Controller called')
 
     const { name, email, password, role } = req.body
 
     const old_user = await userModel.findOne({ email })
 
     if (old_user){
-        console.log('user found')
         res.status(409).send('Email Address Already in Use. Please Login')
 
     } 
@@ -91,9 +88,9 @@ const registerController = async (req, res, next) => {
 
 }
 
-const printcontroller = (req, res) => {
-    res.send('succesfull')
-}
+// const printcontroller = (req, res) => {
+//     res.send('succesfull')
+// }
 
 
 //function to encrypt password
@@ -109,4 +106,4 @@ async function matchedPassword(enteredpassword, hashedpw) {
 }
 
 
-module.exports = { loginController, logoutController, registerController, printcontroller }
+module.exports = { loginController, logoutController, registerController }

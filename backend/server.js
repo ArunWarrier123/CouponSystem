@@ -4,7 +4,6 @@ const cors = require('cors')
 const cookieParser = require('cookie-parser')
 const app = express();
 const connectDB = require('./config/mongodb');
-// const verifyJWT = require('./middleware/verifyJWT');
 
 dotenv.config()
 
@@ -42,7 +41,6 @@ app.get('/', (req , res) =>{
 
 
 app.use('/api/users' , require('./routes/userRoutes'))
-// app.use('/api/test' , require('./routes/userRoutes'))
 app.use('/api/coupons' , require('./routes//couponSystemRoutes'))
 app.use('/api/products' , require('./routes/productRoutes'))
 

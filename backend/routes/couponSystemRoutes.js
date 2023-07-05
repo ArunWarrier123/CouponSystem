@@ -14,6 +14,8 @@ router.route('/edit').put( editcoupon )
 router.route('/delete/:id').delete( deletecoupon )
 
 router.route('/read').get( readcoupons )
+
+//the id passed is a product id such that the coupon also has the passed id in its products array in mongodb
 router.route('/getcoupons/:id').get( readvalidcoupons )
 
 

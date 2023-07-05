@@ -1,5 +1,3 @@
-
-
 const data = {}
 data.products = require('../temp_data_models/products.json')
 
