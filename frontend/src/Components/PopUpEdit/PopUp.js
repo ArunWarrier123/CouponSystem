@@ -50,19 +50,19 @@ export default function PopUp() {
                 <Form>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Coupon Name</Form.Label>
-                        <Form.Control type="email" placeholder={location.state.currcoupondata.name} onChange={(e) => setName(e.target.value)} />
+                        <Form.Control type="email" placeholder={location.state.currcoupondata.name} value={name} onChange={(e) => setName(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicType">
                         <Form.Label>Coupon Type</Form.Label>
-                        <Form.Control type="text" placeholder={location.state.currcoupondata.type} onChange={(e) => setType(e.target.value)} />
+                        <Form.Control type="text" placeholder={location.state.currcoupondata.type} value={type} onChange={(e) => setType(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicValue">
                         <Form.Label>Coupon Value</Form.Label>
-                        <Form.Control type="text" placeholder={location.state.currcoupondata.value} onChange={(e) => setValue(e.target.value)} />
+                        <Form.Control type="text" placeholder={location.state.currcoupondata.value} value={value} onChange={(e) => setValue(e.target.value)} />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicType">
                         <Form.Label>Expiration Date</Form.Label>
-                        <Form.Control type="text" placeholder={location.state.currcoupondata.expiration.substring(0, 10)} onChange={(e) => setExp(e.target.value)} />
+                        <Form.Control type="text" placeholder={location.state.currcoupondata.expiration.substring(0, 10)} value={expiration} onChange={(e) => setExp(e.target.value)} />
                     </Form.Group>
                     <div className='buttons'>
                         <Button variant="danger" type="submit" onClick={ goToHome}>

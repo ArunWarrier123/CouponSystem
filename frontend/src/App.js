@@ -9,6 +9,7 @@ import CustomerHome from './Screens/CustomerHomeScreen/CustomerHome';
 import PopUp from './Components/PopUpEdit/PopUp';
 import CreateCoupon from './Screens/CreateCoupon/createCoupon';
 import ProductScreen from './Screens/ProductScreen/ProductScreen';
+import LandingScreen from './Screens/LandingScreen/LandingScreen';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <main>
       <Routes>
 
+        <Route path='/' element={ <LandingScreen/>}/>
         <Route path='/login' element={ <LoginScreen/>}/>
         <Route path='/register' element={ <RegisterScreen/>}/>
         <Route path='/adminhome' element={ <AdminHome/>}/>
