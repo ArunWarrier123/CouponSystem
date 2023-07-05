@@ -53,35 +53,41 @@ const registerController = async (req, res, next) => {
 
     const old_user = await userModel.findOne({ email })
 
-    if (old_user) res.send('Email Address Already in Use. Please Login')
+    if (old_user){
+        console.log('user found')
+        res.status(409).send('Email Address Already in Use. Please Login')
 
-    const hashedpw = await encryptor(password)
+    } 
+    else{
+        const hashedpw = await encryptor(password)
 
-    const newuser = await userModel.create({
-        name,
-        email,
-        hashedpw,
-        role
-    })
-
-    if (newuser) {
-        const accessToken = jwt.sign(
-            { "name": name ,
-                "role": role},
-            process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: '5m' }
-        )
-
-        const refreshToken = jwt.sign(
-            { "name": name },
-            process.env.REFRESH_TOKEN_SECRET,
-            { expiresIn: '1d' }
-        )
-        res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
-        res.json(accessToken)
-
+        const newuser = await userModel.create({
+            name,
+            email,
+            hashedpw,
+            role
+        })
+    
+        if (newuser) {
+            const accessToken = jwt.sign(
+                { "name": name ,
+                    "role": role},
+                process.env.ACCESS_TOKEN_SECRET,
+                { expiresIn: '5m' }
+            )
+    
+            const refreshToken = jwt.sign(
+                { "name": name },
+                process.env.REFRESH_TOKEN_SECRET,
+                { expiresIn: '1d' }
+            )
+            res.cookie('jwt', refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
+            res.json(accessToken)
+    
+        }
+        else res.send('Unable to create User')
     }
-    else res.send('Unable to create User')
+
 
 }
 
