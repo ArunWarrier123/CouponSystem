@@ -6,6 +6,9 @@ import Footer from './Components/Footer/Footer';
 import RegisterScreen from './Screens/RegisterScreen/RegisterScreen';
 import AdminHome from './Screens/AdminHomeScreen/AdminHome';
 import CustomerHome from './Screens/CustomerHomeScreen/CustomerHome';
+import PopUp from './Components/PopUpEdit/PopUp';
+import CreateCoupon from './Screens/CreateCoupon/createCoupon';
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
         <Route path='/register' element={ <RegisterScreen/>}/>
         <Route path='/adminhome' element={ <AdminHome/>}/>
         <Route path='/userhome' element={ <CustomerHome/>}/>
+        <Route path='/popup' element={ <PopUp/>}/>
+        <Route path='/popupcreate' element={ <CreateCoupon/>}/>
 
       </Routes>
       </main>

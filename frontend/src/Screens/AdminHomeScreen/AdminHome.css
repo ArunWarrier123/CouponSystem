@@ -1,0 +1,40 @@
+.cards{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    /* justify-content: space-c; */
+    flex-wrap: wrap;
+    /* padding: 20px; */
+}
+
+.onecard{
+    margin: 20px;
+}
+.forflex{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.forflex Button{
+    /* margin-right: auto; */
+    /* display: f; */
+    
+    
+}
+
+
+.addButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aqua;
+    /* height: 1000px; */
+}
+
+.icon{
+    height: 200px;
+}

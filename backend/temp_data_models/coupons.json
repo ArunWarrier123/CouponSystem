@@ -1,0 +1,44 @@
+[
+    {
+        "name": " Freezo Discount Offer", 
+        "type": "Flat",
+        "value": 2000,
+        "expiration": "2023-06-01"
+    },
+    {
+        "name": " Sidemen Discount Offer",
+        "type": "Flat",
+        "value": 2000,
+        "expiration": "2023-08-01"
+    },
+    {
+        "name": " Buzz Discount Offer",
+        "type": "Percentage",
+        "value": 20,
+        "expiration": "2023-08-01"
+    },
+    {
+        "name": " Naruto Discount Offer",
+        "type": "Flat",
+        "value": 1000,
+        "expiration": "2023-09-01"
+    },
+    {
+        "name": " Slimey Discount Offer",
+        "type": "Percentage",
+        "value": 15,
+        "expiration": "2023-08-11"
+    },
+    {
+        "name": " Power Discount Offer",
+        "type": "Flat",
+        "value": 2500,
+        "expiration": "2023-07-10"
+    },
+    {
+        "name": " Freezo Discount Offer",
+        "type": "Percentage",
+        "value": 5,
+        "expiration": "2023-10-01"
+    }
+]
