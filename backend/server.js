@@ -9,7 +9,7 @@ const connectDB = require('./config/mongodb');
 dotenv.config()
 
 //options configurations for cors
-const allowedOrigins = ['http://127.0.0.1:5500' , 'http://localhost:3000' , 'https://coupon4u.onrender.com/' ]
+const allowedOrigins = ['http://127.0.0.1:5500' , 'http://localhost:3000' , 'https://coupon4u.onrender.com' ]
 const corsOptions = {
     origin: (origin, callback) => {
         if(allowedOrigins.indexOf(origin) !== -1 || !origin) { //!origin  is written cuz localhost gives undefined as origin
